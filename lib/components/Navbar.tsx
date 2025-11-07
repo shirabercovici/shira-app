@@ -13,6 +13,7 @@ export default function Navbar() {
           GitHub
         </Link>
         {DEMOS_ENABLED ? <Link href="/demos">Demos</Link> : null}
+        <Link href="/tic-tac-toe">Tic-Tac-Toe</Link>
       </nav>
     </header>
   );
