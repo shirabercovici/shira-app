@@ -6,7 +6,7 @@ import Navbar from "@/lib/components/Navbar";
 import Footer from "@/lib/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Digital Product Jam Starter Kit",
+  title: "Shira's App",
   description:
     "A starter kit for wiritng code in the Digital Product Jam course.",
 };
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html>
       <head>
         {/* Browser Favicon */}
-        <link rel="icon" href="/icons/favicon.png" />
+        <link rel="icon" href="/icons/Shira website icon.png" />
         {/* Apple Icon */}
         <link
           rel="apple-touch-icon"

@@ -1,74 +1,33 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
-
-h1 {
-  margin-top: 0;
-  font-size: 22px;
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 20px;
-}
-
-h3 {
-  margin-top: 0;
-  font-size: 18px;
-}
-
-h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-h5 {
-  margin-top: 0;
-  font-size: 14px;
-}
-
-h6 {
-  margin-top: 0;
-  font-size: 12px;
-}
-
-code {
-  font-size: 1.2em;
-}
-
-ul {
-  padding-inline-start: 20px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
-}
-
 .square {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box; 
   background: #fff;
   border: 1px solid #999;
-  float: left;
-  font-size: 24px;
+  font-size: 48px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
+  height: 100px;
+  width: 100px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  line-height: 100px; 
+  /* Use a transparent outline to prevent jiggle on focus */
+  outline: 2px solid transparent;
+}
+
+.square:active {
+  background-color: #fff;
+  border: 1px solid #999;
+  box-shadow: none;
+  transform: none;
+  /* No special active styles needed that would cause a jiggle */
+}
+
+.square:focus {
+   outline: none;
+   box-shadow: none;
+   outline-color: #4CAF50; /* Make outline visible on focus for accessibility */
 }
 
 .board-row:after {
@@ -76,10 +35,44 @@ body {
   content: '';
   display: table;
 }
+.board-row {
+  display: flex;
+  gap: 0; /* Ensure no default gap, we'll manage borders */
+}
+.board-row:after { /* This rule is no longer needed with flexbox */
+  content: none;
+}
 
 .status {
   margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  width: 300px;
+  text-align: center;  
+  min-height: 1.5em; 
 }
+
+.playAgainButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none; /* Remove default focus outline */
+}
+.playAgainButton:hover {
+  background-color: #45a049;
+}
+.playAgainButton:active {
+  background-color: #3e8e41;
+  box-shadow: none; /* Ensure no default active box-shadow */
+}
+
 .game {
   display: flex;
   flex-direction: row;
@@ -87,4 +80,23 @@ body {
 
 .game-info {
   margin-left: 20px;
+}
+
+.gameContainer {
+  /* This is now just a fullscreen flex box */
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.gameWrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
 }
