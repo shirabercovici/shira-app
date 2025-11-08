@@ -33,19 +33,39 @@
   border: 1px solid #999;
   box-shadow: none;
   transform: none;
-  /* Ensure dimensions stay exactly the same */
   height: 100px;
   width: 100px;
   outline: 2px solid transparent;
-  /* No special active styles needed that would cause a jiggle */
 }
 
 .square:focus {
    /* Keep the same transparent outline to maintain dimensions */
-   outline: 2px solid #4CAF50; /* Visible outline for accessibility */
+   outline: 2px solid var(--color-accent); /* Visible outline for accessibility */
+   outline-offset: -2px; /* Pull the outline inside the border */
    box-shadow: none;
-   /* Ensure no size changes on focus */
    border: 1px solid #999;
+}
+
+.square:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  /* Prevent focus outline on disabled buttons */
+}
+
+.square:disabled:focus {
+  outline: 2px solid transparent;
+  /* Remove focus outline when disabled */
+}
+
+.winningSquare {
+  color: var(--color-accent);
+  /* Highlight winning squares with accent color */
+}
+
+.winningSquare:disabled {
+  opacity: 1;
+  /* Keep full opacity for winning squares even when disabled */
+  cursor: default;
 }
 
 .boardRow {
@@ -72,7 +92,7 @@
   padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #4CAF50; /* Green background */
+  background-color: var(--color-accent);
   color: white;
   border: none;
   border-radius: 5px;
@@ -80,11 +100,13 @@
   transition: background-color 0.3s ease;
   outline: none; /* Remove default focus outline */
 }
+
 .playAgainButton:hover {
-  background-color: #45a049;
+  background-color: var(--color-accent);
 }
+
 .playAgainButton:active {
-  background-color: #3e8e41;
+  background-color: var(--color-accent);
   box-shadow: none; /* Ensure no default active box-shadow */
 }
 
