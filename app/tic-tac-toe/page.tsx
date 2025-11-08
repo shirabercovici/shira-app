@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import styles from './page.module.css';
 
 type SquareProps = {
@@ -8,12 +8,34 @@ type SquareProps = {
   onSquareClick: () => void;
   disabled?: boolean;
   isWinning?: boolean;
+  winner?: string | null;
+  nextPlayer?: 'X' | 'O' | null;
+  gameFinished?: boolean;
+  isLastMove?: boolean;
 };
 
-function Square({ value, onSquareClick, disabled, isWinning }: SquareProps) {
+function Square({ value, onSquareClick, disabled, isWinning, winner, nextPlayer, gameFinished, isLastMove }: SquareProps) {
+  // Build class names: base square + player color + winning state + turn indicator
+  let squareClass = styles.square;
+  
+  if (isWinning && winner) {
+    // Winning squares get special styling based on winner
+    squareClass += ` ${winner === 'X' ? styles.winningSquareX : styles.winningSquareO}`;
+  } else {
+    // Non-winning squares get player color for text
+    squareClass += value === 'X' ? ` ${styles.playerX}` : value === 'O' ? ` ${styles.playerO}` : '';
+  }
+
+  // Highlight the last move with a thicker, colored border.
+  // This is checked separately to override other border styles if needed.
+  if (isLastMove && value) {
+    // Add the player's color class for the border and the thicker border style
+    squareClass += value === 'X' ? ` ${styles.lastMoveX}` : ` ${styles.lastMoveO}`;
+  }
+  
   return ( 
     <button 
-      className={`${styles.square} ${isWinning ? styles.winningSquare : ''}`}
+      className={squareClass}
       onClick={onSquareClick}
       disabled={disabled}
     >
@@ -25,6 +47,7 @@ function Square({ value, onSquareClick, disabled, isWinning }: SquareProps) {
 export default function Board() {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState<(string | null)[]>(Array(9).fill(null));
+  const [lastMove, setLastMove] = useState<number | null>(null);
 
   function handleClick(i: number) {
     if (squares[i] || calculateWinner(squares).winner) {
@@ -38,6 +61,7 @@ export default function Board() {
     }
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
+    setLastMove(i);
   }
   
   const winnerResult = calculateWinner(squares);
@@ -47,18 +71,27 @@ export default function Board() {
   const isDraw = !winner && squares.every(square => square !== null);
   const gameFinished: boolean = !!winner || isDraw;
 
-  let status: string; // Explicitly type status as string
+  let status: ReactNode; // Changed to ReactNode to support colored text
   if (winner) {
-    status = "Winner: " + winner;
+    status = (
+      <>
+        Winner: <span className={winner === 'X' ? styles.playerXText : styles.playerOText}>{winner}</span>
+      </>
+    );
   } else if (isDraw) {
     status = "Draw!";
   } else {
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    status = (
+      <>
+        Next player: <span className={xIsNext ? styles.playerXText : styles.playerOText}>{xIsNext ? "X" : "O"}</span>
+      </>
+    );
   }
 
   function handlePlayAgain() {
     setSquares(Array(9).fill(null)); // Reset all squares to null
     setXIsNext(true); // 'X' starts the new game
+    setLastMove(null); // Reset the last move
   }
 
 return (
@@ -74,19 +107,19 @@ return (
         <div className={styles.status}>{status}</div>
         <div className={styles.gameBoard}>
           <div className={styles.boardRow}>
-            <Square value={squares[0]} onSquareClick={() => handleClick(0)} disabled={gameFinished} isWinning={winningLine?.includes(0)} />
-            <Square value={squares[1]} onSquareClick={() => handleClick(1)} disabled={gameFinished} isWinning={winningLine?.includes(1)} />
-            <Square value={squares[2]} onSquareClick={() => handleClick(2)} disabled={gameFinished} isWinning={winningLine?.includes(2)} />
+            <Square value={squares[0]} onSquareClick={() => handleClick(0)} disabled={gameFinished} isWinning={winningLine?.includes(0)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 0} />
+            <Square value={squares[1]} onSquareClick={() => handleClick(1)} disabled={gameFinished} isWinning={winningLine?.includes(1)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 1} />
+            <Square value={squares[2]} onSquareClick={() => handleClick(2)} disabled={gameFinished} isWinning={winningLine?.includes(2)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 2} />
           </div>
           <div className={styles.boardRow}>
-            <Square value={squares[3]} onSquareClick={() => handleClick(3)} disabled={gameFinished} isWinning={winningLine?.includes(3)} />
-            <Square value={squares[4]} onSquareClick={() => handleClick(4)} disabled={gameFinished} isWinning={winningLine?.includes(4)} />
-            <Square value={squares[5]} onSquareClick={() => handleClick(5)} disabled={gameFinished} isWinning={winningLine?.includes(5)} />
+            <Square value={squares[3]} onSquareClick={() => handleClick(3)} disabled={gameFinished} isWinning={winningLine?.includes(3)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 3} />
+            <Square value={squares[4]} onSquareClick={() => handleClick(4)} disabled={gameFinished} isWinning={winningLine?.includes(4)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 4} />
+            <Square value={squares[5]} onSquareClick={() => handleClick(5)} disabled={gameFinished} isWinning={winningLine?.includes(5)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 5} />
           </div>
           <div className={styles.boardRow}>
-            <Square value={squares[6]} onSquareClick={() => handleClick(6)} disabled={gameFinished} isWinning={winningLine?.includes(6)} />
-            <Square value={squares[7]} onSquareClick={() => handleClick(7)} disabled={gameFinished} isWinning={winningLine?.includes(7)} />
-            <Square value={squares[8]} onSquareClick={() => handleClick(8)} disabled={gameFinished} isWinning={winningLine?.includes(8)} />
+            <Square value={squares[6]} onSquareClick={() => handleClick(6)} disabled={gameFinished} isWinning={winningLine?.includes(6)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 6} />
+            <Square value={squares[7]} onSquareClick={() => handleClick(7)} disabled={gameFinished} isWinning={winningLine?.includes(7)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 7} />
+            <Square value={squares[8]} onSquareClick={() => handleClick(8)} disabled={gameFinished} isWinning={winningLine?.includes(8)} winner={winner} nextPlayer={xIsNext ? 'X' : 'O'} gameFinished={gameFinished} isLastMove={lastMove === 8} />
           </div>
         </div>
 

@@ -18,13 +18,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Reserve space for text to prevent layout shift */
-  /* Use a transparent outline to prevent jiggle on focus */
   outline: 2px solid transparent;
   /* Prevent any text selection or cursor changes */
   cursor: pointer;
   user-select: none;
-  /* Ensure no vertical alignment issues */
   vertical-align: top;
 }
 
@@ -39,8 +36,6 @@
 }
 
 .square:focus {
-   /* Keep the same transparent outline to maintain dimensions */
-   outline: 2px solid var(--color-accent); /* Visible outline for accessibility */
    outline-offset: -2px; /* Pull the outline inside the border */
    box-shadow: none;
    border: 1px solid #999;
@@ -57,15 +52,69 @@
   /* Remove focus outline when disabled */
 }
 
-.winningSquare {
+/* Player colors */
+.playerX {
   color: var(--color-accent);
-  /* Highlight winning squares with accent color */
 }
 
-.winningSquare:disabled {
+.playerO {
+  color: var(--color-accent2);
+}
+
+.turnX {
+  border: 2px solid var(--color-accent);
+}
+
+.turnO {
+  border: 2px solid var(--color-accent2);
+}
+
+/* Last move indicators */
+.lastMoveX.square {
+  border: 2px solid var(--color-accent);
+}
+
+.lastMoveO.square {
+  border: 2px solid var(--color-accent2);
+}
+
+.lastMoveX:disabled {
+  opacity: 1;
+}
+
+.winningSquareX.square {
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.winningSquareO.square {
+  color: var(--color-accent2);
+  border: 1px solid var(--color-accent2);
+
+}
+
+.winningSquareX:disabled {
   opacity: 1;
   /* Keep full opacity for winning squares even when disabled */
   cursor: default;
+}
+
+
+.winningSquareO:disabled {
+  opacity: 1;
+  /* Keep full opacity for winning squares even when disabled */
+  cursor: default;
+}
+
+/* Text colors for status */
+.playerXText {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.playerOText {
+  color: var(--color-accent2);
+  font-weight: bold;
 }
 
 .boardRow {
@@ -103,6 +152,7 @@
 
 .playAgainButton:hover {
   background-color: var(--color-accent);
+  cursor: pointer;
 }
 
 .playAgainButton:active {
