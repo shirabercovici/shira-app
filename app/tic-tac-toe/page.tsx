@@ -59,7 +59,8 @@ return (
       {/* This is the new inner wrapper to prevent jiggling */}
       <div className={styles.gameWrapper}>
         <div>
-          <h1>Let&apos;s play Tic-Tac-Toe!</h1>
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          <h1>Let's play Tic-Tac-Toe!</h1>
         </div>
         <div className={styles.status}>{status}</div>
         <div className={styles.gameBoard}>

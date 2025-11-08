@@ -9,11 +9,23 @@
   font-weight: bold;
   height: 100px;
   width: 100px;
+  min-width: 100px; /* Prevent shrinking */
+  min-height: 100px;
   padding: 0;
-  text-align: center;
-  line-height: 100px; 
+  margin: 0;
+  flex-shrink: 0; /* Prevent squares from shrinking */
+  /* Use flexbox for perfect centering without layout shift */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Reserve space for text to prevent layout shift */
   /* Use a transparent outline to prevent jiggle on focus */
   outline: 2px solid transparent;
+  /* Prevent any text selection or cursor changes */
+  cursor: pointer;
+  user-select: none;
+  /* Ensure no vertical alignment issues */
+  vertical-align: top;
 }
 
 .square:active {
@@ -21,26 +33,29 @@
   border: 1px solid #999;
   box-shadow: none;
   transform: none;
+  /* Ensure dimensions stay exactly the same */
+  height: 100px;
+  width: 100px;
+  outline: 2px solid transparent;
   /* No special active styles needed that would cause a jiggle */
 }
 
 .square:focus {
-   outline: none;
+   /* Keep the same transparent outline to maintain dimensions */
+   outline: 2px solid #4CAF50; /* Visible outline for accessibility */
    box-shadow: none;
-   outline-color: #4CAF50; /* Make outline visible on focus for accessibility */
+   /* Ensure no size changes on focus */
+   border: 1px solid #999;
 }
 
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
-}
-.board-row {
+.boardRow {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 0; /* Ensure no default gap, we'll manage borders */
-}
-.board-row:after { /* This rule is no longer needed with flexbox */
-  content: none;
+  align-items: flex-start; /* Align squares to top to prevent vertical shifting */
+  width: fit-content; /* Only as wide as the 3 squares */
+  justify-content: flex-start;
 }
 
 .status {
@@ -96,7 +111,10 @@
   align-items: center; 
 }
 
-.game-board {
+.gameBoard {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center the board */
+  gap: 0; /* No gap between rows */
+  width: fit-content;
 }
