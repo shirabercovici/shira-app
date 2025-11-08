@@ -141,17 +141,20 @@
   padding: 10px 20px;
   font-size: 18px;
   font-weight: bold;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   outline: none; /* Remove default focus outline */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .playAgainButton:hover {
-  background-color: var(--color-accent);
+  background-color: var(--color-text);
   cursor: pointer;
 }
 
