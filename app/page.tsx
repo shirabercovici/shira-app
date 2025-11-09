@@ -21,7 +21,7 @@ export default function Home() {
             />
           </div>
           <h3>Tic-Tac-Toe</h3>
-          <p>The classic game of X&apos;s and O&apos;s.</p>
+          <p>The classic game of X&apos;s and O&apos;s</p>
         </Link>
       </div>
     </main>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, ReactNode } from 'react';
+import { useState, ReactNode, useEffect } from 'react';
+import Confetti from 'react-confetti';
 import styles from './page.module.css';
 
 type SquareProps = {
@@ -48,6 +49,7 @@ export default function Board() {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState<(string | null)[]>(Array(9).fill(null));
   const [lastMove, setLastMove] = useState<number | null>(null);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   function handleClick(i: number) {
     if (squares[i] || calculateWinner(squares).winner) {
@@ -71,6 +73,18 @@ export default function Board() {
   const isDraw = !winner && squares.every(square => square !== null);
   const gameFinished: boolean = !!winner || isDraw;
 
+  useEffect(() => {
+    if (winner) {
+      setShowConfetti(true);
+      const timer = setTimeout(() => {
+        setShowConfetti(false);
+      }, 6000);
+
+      // Cleanup the timer if the component unmounts or winner changes
+      return () => clearTimeout(timer);
+    }
+  }, [winner]);
+
   let status: ReactNode; // Changed to ReactNode to support colored text
   if (winner) {
     status = (
@@ -92,11 +106,13 @@ export default function Board() {
     setSquares(Array(9).fill(null)); // Reset all squares to null
     setXIsNext(true); // 'X' starts the new game
     setLastMove(null); // Reset the last move
+    setShowConfetti(false); // Ensure confetti is hidden when playing again
   }
 
 return (
     // This is the outer container for fullscreen centering
     <div className={styles.gameContainer}>
+      {showConfetti && <Confetti recycle={false} numberOfPieces={500} />}
       
       {/* This is the new inner wrapper to prevent jiggling */}
       <div className={styles.gameWrapper}>
