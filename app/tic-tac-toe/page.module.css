@@ -153,6 +153,10 @@
   justify-content: center;
 }
 
+.reloadIcon {
+  margin-right: 8px; /* Adds space between the icon and the text */
+}
+
 .playAgainButton:hover {
   background-color: var(--color-text);
   cursor: pointer;

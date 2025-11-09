@@ -9,28 +9,18 @@ export const metadata: Metadata = {
   title: "Shira's App",
   description:
     "A starter kit for wiritng code in the Digital Product Jam course.",
+  icons: {
+    icon: "/icons/shira website icon.png", // Main browser favicon
+    apple: "/icons/icon-180.png", // Apple touch icon
+  },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html>
       <head>
-        {/* Browser Favicon */}
-        <link rel="icon" href="/icons/Shira website icon.png" />
-        {/* Apple Icon */}
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/icons/icon-180.png"
-        />
-        {/* Android Icon */}
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/icons/icon-192.png"
-        />
-        <link rel="manifest" href="/manifest.json" />
+        {/* The <head> is now managed by Next.js through the metadata object */}
         <script src="https://accounts.google.com/gsi/client" async></script>
       </head>
       <body>
