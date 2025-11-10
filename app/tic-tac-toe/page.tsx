@@ -29,7 +29,7 @@ function Square({ value, onSquareClick, disabled, isWinning, winner, nextPlayer,
 
   // Highlight the last move with a thicker, colored border.
   // This is checked separately to override other border styles if needed.
-  if (isLastMove && value) {
+  if (isLastMove && value && !gameFinished) {
     // Add the player's color class for the border and the thicker border style
     squareClass += value === 'X' ? ` ${styles.lastMoveX}` : ` ${styles.lastMoveO}`;
   }

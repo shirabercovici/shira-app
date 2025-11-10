@@ -21,6 +21,7 @@ export default function Navbar() {
       <nav>
         <Link href="/">Home</Link>
         <Link href="/tic-tac-toe">Tic-Tac-Toe</Link>
+        <Link href="/art">Met Museum of Art</Link>
       </nav>
     </header>
   );

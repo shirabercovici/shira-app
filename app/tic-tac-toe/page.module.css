@@ -134,6 +134,15 @@
   width: 300px;
   text-align: center;  
   min-height: 1.5em; 
+  text-align: center;
+  min-height: 1.5em;
+  /* Add a transition for a smooth animation */
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.statusFinished {
+  /* Scale up the status text when the game is over */
+  transform: scale(1.4);
 }
 
 .playAgainButton {
@@ -196,4 +205,32 @@
   align-items: center; /* Center the board */
   gap: 0; /* No gap between rows */
   width: fit-content;
+}
+
+/* Winner Overlay Styles */
+.winnerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.winnerText {
+  font-size: 72px;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

@@ -14,7 +14,7 @@ export default function Home() {
         <Link href="/tic-tac-toe" className={styles.card}>
           <div className={styles.imageContainer}>
             <Image
-              src="/Tic-Tac-Toe2.png"
+              src="/Tic-Tac-Toe.png"
               alt="Preview of the Tic-Tac-Toe game"
               fill
               style={{ objectFit: "cover" }}
@@ -22,6 +22,18 @@ export default function Home() {
           </div>
           <h3>Tic-Tac-Toe</h3>
           <p>The classic game of X&apos;s and O&apos;s</p>
+        </Link>
+        <Link href="/art" className={styles.card}>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/Met Museum of Art .jpeg"
+              alt="Preview of the Met Museum of Art page"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <h3>Met Museum of Art</h3>
+          <p>Art from the Met Museum of Art</p>
         </Link>
       </div>
     </main>
