@@ -7,10 +7,10 @@ interface ArtObject {
   title: string;
   artistDisplayName: string;
   primaryImageSmall: string;
-  primaryImage: string; // This is the large image
+  primaryImage: string;
   objectDate: string;
   medium: string;
-  culture: string; // This will be used
+  period: string;
   objectURL: string;
 }
 
@@ -119,7 +119,7 @@ const ArtItem: React.FC<ArtItemProps> = ({ item }) => {
           <p><strong>Artist:</strong> {item.artistDisplayName || 'Unknown Artist'}</p>
           <p><strong>Date:</strong> {item.objectDate || 'Unknown'}</p>
           <p><strong>Medium:</strong> {item.medium || 'Unknown'}</p>
-          <p><strong>Culture:</strong> {item.culture || 'Unknown'}</p>
+          <p><strong>Period:</strong> {item.period || 'Unknown'}</p>
         </div>
       </div>
     </a>
@@ -130,8 +130,8 @@ const ArtItem: React.FC<ArtItemProps> = ({ item }) => {
 // --- Main Page Component ---
 export default async function ArtPage() {
   // --- Configuration ---
-  const DEPARTMENT_ID = '11'; // "European Paintings"
-  const ART_COUNT = 6;
+  const DEPARTMENT_ID = '10';
+  const ART_COUNT = 12;
 
   let data: ArtDataResponse | null = null;
   let fetchError: string | null = null;
