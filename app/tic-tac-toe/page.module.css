@@ -188,7 +188,7 @@
 .gameContainer {
   /* This is now just a fullscreen flex box */
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - 60px); /* Full viewport height minus the navbar height */
   width: 100%;
 }
 
@@ -233,4 +233,9 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+.title {
+  text-align: center;
+  width: 100%;
 }

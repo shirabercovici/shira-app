@@ -27,11 +27,11 @@
 /* Grid for the art cards */
 .grid {
   display: grid;
-  /* Creates a responsive grid */
-  /* This will create 3 columns on wider screens, and fewer on smaller ones */
-  grid-template-columns: repeat(3, 1fr);
+  /* This creates a responsive grid. It fits as many columns as possible
+     that are at least 320px wide. On smaller screens, it will automatically
+     wrap to a single column. */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
-  justify-items: center; /* Center items within their grid cell */
 }
 
 /* Styling for the ArtItem component */
@@ -97,4 +97,15 @@
   color: inherit;
   text-decoration: none;
   width: 100%; /* Make the link fill the grid cell */
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
 }

@@ -1,10 +1,114 @@
-.navLink {
-  display: flex;
-  align-items: center;
+.navbar {
+  background-color: #fff; /* Ensure navbar has a solid background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
 }
 
-.navIcon {
-  margin-right: 10px;
-  width: 50px;
-  height: 50px;
+.logoLink {
+  display: flex; /* Use flexbox to align icon and text */
+  align-items: center; /* Vertically center the icon and text */
+  gap: 0.5rem; /* Add some space between the icon and text */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  text-decoration: none;
+  white-space: nowrap; /* Prevent the logo text itself from wrapping */
+}
+
+.logoIcon {
+  height: 40px; /* Give the logo icon a size */
+  width: auto; /* Maintain aspect ratio */
+}
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+  height: 60px;
+}
+
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; /* Ensure it's above the nav links */
+  color: var(--color-text);
+}
+
+.navLinks {
+  display: none; /* Hidden by default on mobile */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: center;
+  /* The menu should be as high as the viewport minus the navbar height */
+  height: calc(100vh - 60px);
+}
+
+.navLinks.showMenu {
+  display: flex; /* Show when hamburger is clicked */
+}
+
+.navLinks ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.navLinks li {
+  width: 100%;
+}
+
+.navLinks a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap; /* Prevent link text from wrapping */
+}
+
+.navLinks a:hover,
+.navLinks a:focus {
+  background-color: #f0f0f0;
+}
+
+/* --- Desktop Styles --- */
+/* Using a media query for screens wider than 768px */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none; /* Hide hamburger on desktop */
+  }
+
+  .navLinks {
+    display: flex; /* Show links on desktop */
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    flex-direction: row;
+  }
+
+  .navLinks ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: auto;
+  }
 }
