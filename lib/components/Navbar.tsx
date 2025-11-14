@@ -59,13 +59,18 @@ export default function NavBar() {
               </Link>
             </li>
             <li>
+              <Link href="/tic-tac-toe">
+                Tic-Tac-Toe
+              </Link>
+            </li>
+            <li>
               <Link href="/art">
                 Art Gallery
               </Link>
             </li>
             <li>
-              <Link href="/tic-tac-toe">
-                Tic-Tac-Toe
+              <Link href="/design">
+                DuoGami
               </Link>
             </li>
           </ul>

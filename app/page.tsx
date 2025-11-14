@@ -35,6 +35,18 @@ export default function Home() {
           <h3>Met Museum of Art</h3>
           <p>Art from the Met Museum of Art</p>
         </Link>
+        <Link href="/design" className={styles.card}>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/DuoGami.png"
+              alt="Preview of the DuoGami app"
+              fill
+              style={{ objectFit: "cover" }}
+            />
+          </div>
+          <h3>DuoGami</h3>
+          <p>Create your own origami</p>
+        </Link>
       </div>
     </main>
   );
