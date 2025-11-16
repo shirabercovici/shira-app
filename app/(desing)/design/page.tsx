@@ -3,20 +3,13 @@ import Link from "next/link";
 
 export default function DesignPage() {
   return (
-    <div>
-      {/*
-        The fix is to use the imported `styles` object.
-        `className={styles.duogamiContent}` is correct.
-        `className="duogamiContent"` would be incorrect and cause the error.
-      */}
+    <div className={styles.rtlPage}>
       <div className={styles.duogamiContent}>
-        <Link href="#" className={styles.DuoGamiLink}>
           <p>
             מוצר שבא ללמד אנשים לעשות אוריגאמי ברמות שונות ומותאמות למשתמש
             מהפלאפון. מוצר זה מהווה קפיצת מדרגה לאנשים שמכירים את עולם
-            האוריגמי, וגם שער כניסה עבור אנשים חדשים
+            האוריגמי, וגם שער כניסה עבור אנשים חדשים.
           </p>
-        </Link>
       </div>
       <div>
         <h3 className={styles.duogamiHeader}>קטגוריות</h3>
@@ -30,15 +23,65 @@ export default function DesignPage() {
         <p className={styles.duogamiP}>דמויות אדם, בובות, פרצופים מעוצבים</p>
         <h6 className={styles.duogamiCategory}>פנטזיה ויצורים מיתולוגיים</h6>
         <p className={styles.duogamiP}>דרקונים, חד־קרן, עוף החול, מפלצות</p>
+
         <h3 className={styles.duogamiHeader}>צוות</h3>
-        <h6 className={styles.duogamiP}>אניה רובינשטיין</h6>
+        <h6 className={styles.duogamiTeam}>אניה רובינשטיין</h6>
         <p className={styles.duogamiP}>כתיבה</p>
+        <h6 className={styles.duogamiTeam}>רומי באוך</h6>
+        <p className={styles.duogamiP}>טיפוגרפיה</p>
+        <h6 className={styles.duogamiTeam}>אביה דרוזין</h6>
+        <p className={styles.duogamiP}>סידור וניהול הפרוייקט</p>
+        <h6 className={styles.duogamiTeam}>שחר בן שימול</h6>
+        <p className={styles.duogamiP}>חווית ux</p>
 
-        
+      </div>
+      <div className={styles.duogamiInfoBox}>
+          <p>
+האפליקציה שואפת להפוך את אמנות האוריגמי לחוויה עכשווית, נגישה ומרגשת. העיצוב הגרפי הוא כלי מרכזי בהעברת הערכים האלה  שילוב בין מסורת ודיוק לבין חדשנות, רוגע והתפתחות אישית. בעזרת שפה חזותית נקייה, צבעוניות רגועה ואלמנטים יפניים, אנו יוצרים חיבור בין עולם האוריגמי הקלאסי לבין סביבה דיגיטלית עכשווית שמעודדת סבלנות, קהילה ויצירה.          </p>
+      </div>
+      <div>
+        <h3 className={styles.duogamiHeader}>רפרנסים מעולמות שונים</h3>
+        <img className={styles.duogamiImg} src="/design/Japan.svg" alt="Japan Logo" />
+        <h6 className={styles.duogamiRef}>יפן</h6>
+        <p className={styles.duogamiRefP}>השראה מהאסתטיקה היפנית</p>
+        <hr className={styles.hr}></hr>
+        <h6 className={styles.duogamiRefCon}>ניקיון צורני</h6>
+        <p className={styles.duogamiPBlue}>חיבור לטבע, פשטות, איזון</p>
 
+        <img className={styles.duogamiImg} src="/design/Japan_flag.svg" alt="Japan flag Logo" />
+        <h6 className={styles.duogamiRef}>מינימלים</h6>
+        <p className={styles.duogamiRefP}>קווים עדינים וצבעוניות מאופקת</p>
+        <hr className={styles.hr}></hr>
+        <h6 className={styles.duogamiRefCon}>שימוש בחלל ריק</h6>
+        <p className={styles.duogamiPBlue}>להדגיש את התוכן</p>
 
+        <img className={styles.duogamiImg} src="/design/clam.svg" alt="clam Logo" />
+        <h6 className={styles.duogamiRef}>תרבות הפנאי</h6>
+        <p className={styles.duogamiRefP}>מלאכות ישנות מדיטטיביות</p>
+        <hr className={styles.hr}></hr>
+        <h6 className={styles.duogamiRefCon}>רעיון היציאה</h6>
+        <p className={styles.duogamiPBlue}>אישית</p>
 
-        </div>
+        <img className={styles.duogamiImg} src="/design/mountain.svg" alt="mountain Logo" />
+        <h6 className={styles.duogamiRef}>פיתוח עצמי</h6>
+        <p className={styles.duogamiRefP}>הדגשת התהליך לא התוצאה</p>
+        <hr className={styles.hr}></hr>
+        <h6 className={styles.duogamiRefCon}>קידום אישי</h6>
+        <p className={styles.duogamiPBlue}>צעד בלמידה והתפתחות</p>
+      </div>
+
+      <div className={styles.duogamiExp}>
+        <p>יצאנו לחקר מתוך חשיבה על עולמות של תרבות הפנאי, חזרתם של מלאכות ישנות לתרבות, לקחנו השראה מתוך התרבות היפנית ומעיצוב מנימליסטי מתוך מחשבה על חידוש מסורת ישנה וליצור שפה עיצובית שהיא מודרנית. אנחנו תופסים מהמשתמשים אנשים חושבים ועצמאים שאוהבים את הנוסטלגיה ובאותה נשימה נלהבים מהחדשנות ונתנו את האופציה של שימוש עזר בAI.</p>
+      </div>
+      <div>
+        <h3 className={styles.duogamiHeader}>רכיבים</h3>
+        <h6 className={styles.duogamiRef}>עיצוב מינימליסטי</h6>
+        <p className={styles.duogamiRefP}>הכחול בא להעביר תחושת חדשנות, מתוך המלאכה אנחנו יוצרים משהו טרנדי.</p>
+        <img className={`${styles.duogamiImg} ${styles.circleImg}`} src="/design/circle.png" alt="cirle create" />
+      </div>
+      <div>
+        <p className={styles.duogamiConclusion}>המרחב של שקט והתפתחות בתוך סט אפ שנותן תחושת שייכות וחדשנות, קווים פשוטים ונקיים.</p>
+      </div>
       </div>
 
   );

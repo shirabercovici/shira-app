@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+.rtlPage {
+  direction: rtl;
+}
+
+
 .DuoGamiLink {
   text-decoration: none;
   color: inherit;
@@ -10,19 +15,19 @@
   color: #314FF8;
   text-align: right;
   font-family: var(--font-david-libre), var(--font-roboto), sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px */
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
-  height: 100px;
-  width: 362px;
+  min-height: 6.25rem; /* 100px - Use min-height to allow growing while preserving alignment */
+  width: 22.625rem; /* 362px */
   box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  margin: 12px auto 0; /* 12px top margin, centered horizontally, 0 bottom margin */
+  margin: 0.75rem auto 0; /* 12px top margin, centered horizontally, 0 bottom margin */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  gap: 12px;
+  align-items: stretch; /* Stretch items to full width for consistent text alignment */
+  gap: 0.75rem; /* 12px */
 }
 
 /* This new rule ensures all children of duogamiContent get the blue color */
@@ -34,38 +39,169 @@
   color: #314FF8;
   text-align: center;
   font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
-  font-size: 32px;
+  font-size: 2rem; /* 32px */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 48px;
-  margin-bottom: 34px;
+  margin-top: 3rem; /* 48px */
+  margin-bottom: 1.625rem; /* 26px */
 }
 
 .duogamiCategory {
   color: #314FF8;
   text-align: right;
   font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem; /* 20px */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 0.6px;
-  margin-right: 69px;
+  letter-spacing: 0.0375rem; /* 0.6px */
+  margin-right: 4.3125rem; /* 69px */
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem; /* 5px */
 }
 
 .duogamiP {
   color: #000;
   text-align: right;
   font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
-  font-size: 16px;
+  font-size: 1rem; /* 16px */
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  letter-spacing: 0.48px;
-  margin-right: 69px;
+  letter-spacing: 0.03rem; /* 0.48px */
+  margin-right: 4.3125rem; /* 69px */
   margin-top: 0;
+}
 
+.duogamiTeam {
+  color: #000;
+  text-align: right;
+  font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
+  font-size: 1.25rem; /* 20px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.0375rem; /* 0.6px */
+  height: 1.0625rem; /* 17px */
+  align-self: stretch;
+  margin-right: 4.3125rem; /* 69px */
+  margin-bottom: 0.4375rem; /* 7px */
+  margin-top: 0;
+}
+.duogamiInfoBox {
+  color: #314FF8;
+  text-align: right;
+  font-family: var(--font-david-libre), var(--font-roboto), sans-serif;
+  font-size: 1.5rem; /* 24px */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 31.2px */
+  letter-spacing: 0.18rem; /* 2.88px */
+  margin: 0.75rem auto 0; /* 12px top margin, centered horizontally, 0 bottom margin */
+}
+
+.duogamiImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.duogamiRef {
+  color: #000;
+  text-align: right;
+  font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
+  font-size: 1.5rem; /* 24px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 2.125rem; /* 34px */
+  margin-bottom: 0;
+  width: 17.4375rem; /* 279px */
+  margin-left: auto; /* Center the block */
+  margin-right: auto; /* Center the block */
+}
+
+.duogamiRefP {
+  color: #000;
+  text-align: right;
+  font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
+  font-size: 0.9375rem; /* 15px */
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.028125rem; /* 0.45px */
+  margin-top: 0.4375rem; /* 7px */
+  margin-bottom: 0.625rem; /* 10px */
+  width: 17.4375rem; /* 279px */
+  margin-left: auto; /* Center the block */
+  margin-right: auto; /* Center the block */
+}
+
+.hr {
+  width: 17.4375rem; /* 279px */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.duogamiRefCon {
+  color: #314FF8;
+  text-align: right;
+  font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
+  font-size: 1.25rem; /* 20px */
+  font-style: normal;
+  font-weight: 300;
+  line-height: 0.8125rem; /* 13px */
+  margin-top: 0.625rem; /* 10px */
+  margin-bottom: 0;
+  width: 17.4375rem; /* 279px */
+  margin-left: auto; /* Center the block */
+  margin-right: auto; /* Center the block */
+}
+
+.duogamiPBlue {
+  color: #314FF8;
+  text-align: right;
+  font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
+  font-size: 0.9375rem; /* 15px */
+  font-style: normal;
+  font-weight: 300;
+  line-height: 0.8125rem; /* 13px */
+  margin-top: 0.4375rem; /* 7px */
+  letter-spacing: 0.028125rem; /* 0.45px */
+  margin-bottom: 1.75rem; /* 28px */
+  width: 17.4375rem; /* 279px */
+  margin-left: auto; /* Center the block */
+  margin-right: auto; /* Center the block */
+}
+
+.duogamiExp {
+color: #314FF8;
+text-align: right;
+font-family: var(--font-david-libre), var(--font-roboto), sans-serif;
+font-size: 1.25rem; /* 20px */
+font-style: normal;
+font-weight: 400;
+line-height: 1.5625rem; /* 25px */
+letter-spacing: 0.05rem; /* 0.8px */
+margin-top: 7.1875rem; /* 115px */
+margin-bottom: 7.1875rem; /* 115px */
+margin-right: 2.1875rem; /* 35px */
+margin-left: 2.1875rem; /* 35px */
+}
+
+.duogamiConclusion {
+  color: #000;
+  text-align: right;
+  font-family: "EditorSans", "Open Sans", "Assistant",sans-serif;
+  font-size: 1.25rem; /* 20px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2; /* 150% */
+  margin-right: 3.125rem; /* 50px */
+  margin-left: 3.125rem; /* 50px */
+}
+
+.circleImg {
+  margin-top: 1.5rem; /* 24px */
 }
