@@ -86,7 +86,7 @@
   height: 1.0625rem; /* 17px */
   align-self: stretch;
   margin-right: 4.3125rem; /* 69px */
-  margin-bottom: 0.4375rem; /* 7px */
+  margin-bottom: 0.4rem; /* 7px */
   margin-top: 0;
 }
 .duogamiInfoBox {
@@ -204,4 +204,29 @@ margin-left: 2.1875rem; /* 35px */
 
 .circleImg {
   margin-top: 1.5rem; /* 24px */
+}
+
+
+.teamMemberRow {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  width: 15rem;
+  margin: 0 auto 0rem auto;
+}
+
+
+.designLabel {
+  color: #314FF8;
+  font-family: "EditorSans", "Open Sans", "Assistant", sans-serif;
+  font-size: 1rem; /* 16px */
+  text-align: left;
+}
+
+.teamMemberRow .duogamiTeam {
+  margin-right: 0;
+}
+
+.teamMemberRow .duogamiP {
+  margin-right: 0;
 }

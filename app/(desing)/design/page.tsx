@@ -24,7 +24,7 @@ export default function DesignPage() {
         <h6 className={styles.duogamiCategory}>פנטזיה ויצורים מיתולוגיים</h6>
         <p className={styles.duogamiP}>דרקונים, חד־קרן, עוף החול, מפלצות</p>
 
-        <h3 className={styles.duogamiHeader}>צוות</h3>
+        {/* <h3 className={styles.duogamiHeader}>צוות</h3>
         <h6 className={styles.duogamiTeam}>אניה רובינשטיין</h6>
         <p className={styles.duogamiP}>כתיבה</p>
         <h6 className={styles.duogamiTeam}>רומי באוך</h6>
@@ -34,6 +34,43 @@ export default function DesignPage() {
         <h6 className={styles.duogamiTeam}>שחר בן שימול</h6>
         <p className={styles.duogamiP}>חווית ux</p>
 
+      </div> */}
+        <h3 className={styles.duogamiHeader}>צוות</h3>
+        {/* Team Member 1 */}
+        <div className={styles.teamMemberRow}>
+          <div>
+            <h6 className={styles.duogamiTeam}>אניה רובינשטיין</h6>
+            <p className={styles.duogamiP}>כתיבה</p>
+          </div>
+          <span className={styles.designLabel}>עיצוב</span>
+        </div>
+
+        {/*Team Member 2*/}
+        <div className={styles.teamMemberRow}>
+          <div>
+            <h6 className={styles.duogamiTeam}>רומי באוך</h6>
+            <p className={styles.duogamiP}>טיפוגרפיה</p>
+          </div>
+          <span className={styles.designLabel}>עיצוב</span>
+        </div>
+
+        {/*Team Member 3*/}
+        <div className={styles.teamMemberRow}>
+          <div>
+            <h6 className={styles.duogamiTeam}>אביה דרוזין</h6>
+            <p className={styles.duogamiP}>סידור וניהול הפרוייקט</p>
+          </div>
+          <span className={styles.designLabel}>עיצוב</span>
+        </div>
+
+        {/* Team Member 4*/}
+        <div className={styles.teamMemberRow}>
+          <div>
+            <h6 className={styles.duogamiTeam}>שחר בן שימול</h6>
+            <p className={styles.duogamiP}>חווית ux</p>
+          </div>
+          <span className={styles.designLabel}>עיצוב</span>
+        </div>
       </div>
       <div className={styles.duogamiInfoBox}>
           <p>
