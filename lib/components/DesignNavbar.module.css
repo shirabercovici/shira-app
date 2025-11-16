@@ -1,14 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+
 .header {
   padding: 1rem 2rem;
-  background-color: var(--color-background);
-  border-bottom: 1px solid var(--color-secondary);
+  background-color: #FFFFFF;
   display: flex;
+  justify-content: center; /* This will center the logo horizontally */
   align-items: center;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-text);
-  text-decoration: none;
+color: #314FF8;
+text-align: center;
+font-family: 'Masada', "david libre", serif; /* Use the defined font-family and add a fallback */
+font-size: 56px;
+font-style: normal;
+font-weight: 550;
+line-height: normal;
+text-decoration: none;
 }

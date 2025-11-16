@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import DesignNavbar from "@/lib/components/DesignNavbar";
+import styles from './layout.module.css';
 
 export const metadata = {
   title: "Design Studio - Shira's App",
@@ -10,8 +11,7 @@ export default function DesignLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <DesignNavbar />
-      <main>
-        {/* This is a completely different layout for /design */}
+      <main className={styles.mainContent}>
         {children}
       </main>
     </>

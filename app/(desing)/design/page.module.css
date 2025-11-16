@@ -1,14 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Parkinsans:wght@300..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela+Round&display=swap');
+
 .DuoGamiLink {
   text-decoration: none;
   color: inherit;
 }
 
-.DuoGami {
-color: #314FF8;
-text-align: center;
-font-family: Masada;
-font-size: 56px;
-font-style: normal;
-font-weight: 550;
-line-height: normal;
+.duogamiContent {
+  padding: 2rem; /* Add some padding so text isn't at the edge */
+  color: #314FF8;
+  text-align: right;
+  font-family: "Masada", "David Libre", "Roboto", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  height: 100px;
+  width: 362px;
+  box-sizing: border-box; /* Ensure padding is included in the width calculation */
+  margin: 0 auto; /* Center the element horizontally */
+}
+
+/* This new rule ensures all children of duogamiContent get the blue color */
+.duogamiContent * {
+  color: inherit;
 }
