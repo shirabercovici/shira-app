@@ -2,8 +2,7 @@ import "@/styles/global.css";
 
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Navbar from "@/lib/components/Navbar";
-import Footer from "@/lib/components/Footer";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Shira's App",
@@ -18,15 +17,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html>
-      <head>
-        {/* The <head> is now managed by Next.js through the metadata object */}
-        <script src="https://accounts.google.com/gsi/client" async></script>
-      </head>
+    <html lang="en">
       <body>
-        <Navbar />
-        <div>{children}</div>
-        <Footer />
+        {children}
+        <Script src="https://accounts.google.com/gsi/client" async />
       </body>
     </html>
   );
