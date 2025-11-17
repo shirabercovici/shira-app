@@ -1,6 +1,43 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
+import localFont from "next/font/local";
+import "./styles/global.css";
+
+
+// Configure Masada (Defining Regular and Bold)
+export const masada = localFont({
+  src: [
+    {
+      path: './fonts/Masada-Book.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/Masada-Bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-masada',
+});
+
+// Configure EditorSans (Defining Normal and Medium)
+export const editorSans = localFont({
+  src: [
+    {
+      path: './fonts/EditorSans-Normal.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/EditorSans-Medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-editor-sans',
+});
 
 
 export const metadata: Metadata = {
@@ -16,8 +53,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className={`${masada.variable} ${editorSans.variable}`}>
+      {/* By default, the entire app will use editorSans. */}
+      <body className={editorSans.className}>
         {children}
         <Script src="https://accounts.google.com/gsi/client" async />
       </body>

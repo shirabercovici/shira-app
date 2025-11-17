@@ -4,8 +4,8 @@ import Link from "next/link";
 export default function DesignPage() {
   return (
     <div className={styles.rtlPage}>
-      <div className={styles.duogamiContent}>
-          <p>
+      <div>
+          <p className={styles.duogamiContent}>
             מוצר שבא ללמד אנשים לעשות אוריגאמי ברמות שונות ומותאמות למשתמש
             מהפלאפון. מוצר זה מהווה קפיצת מדרגה לאנשים שמכירים את עולם
             האוריגמי, וגם שער כניסה עבור אנשים חדשים.
@@ -24,17 +24,6 @@ export default function DesignPage() {
         <h6 className={styles.duogamiCategory}>פנטזיה ויצורים מיתולוגיים</h6>
         <p className={styles.duogamiP}>דרקונים, חד־קרן, עוף החול, מפלצות</p>
 
-        {/* <h3 className={styles.duogamiHeader}>צוות</h3>
-        <h6 className={styles.duogamiTeam}>אניה רובינשטיין</h6>
-        <p className={styles.duogamiP}>כתיבה</p>
-        <h6 className={styles.duogamiTeam}>רומי באוך</h6>
-        <p className={styles.duogamiP}>טיפוגרפיה</p>
-        <h6 className={styles.duogamiTeam}>אביה דרוזין</h6>
-        <p className={styles.duogamiP}>סידור וניהול הפרוייקט</p>
-        <h6 className={styles.duogamiTeam}>שחר בן שימול</h6>
-        <p className={styles.duogamiP}>חווית ux</p>
-
-      </div> */}
         <h3 className={styles.duogamiHeader}>צוות</h3>
         {/* Team Member 1 */}
         <div className={styles.teamMemberRow}>
@@ -72,8 +61,8 @@ export default function DesignPage() {
           <span className={styles.designLabel}>עיצוב</span>
         </div>
       </div>
-      <div className={styles.duogamiInfoBox}>
-          <p>
+      <div>
+          <p className={styles.duogamiInfoBox}>
 האפליקציה שואפת להפוך את אמנות האוריגמי לחוויה עכשווית, נגישה ומרגשת. העיצוב הגרפי הוא כלי מרכזי בהעברת הערכים האלה  שילוב בין מסורת ודיוק לבין חדשנות, רוגע והתפתחות אישית. בעזרת שפה חזותית נקייה, צבעוניות רגועה ואלמנטים יפניים, אנו יוצרים חיבור בין עולם האוריגמי הקלאסי לבין סביבה דיגיטלית עכשווית שמעודדת סבלנות, קהילה ויצירה.          </p>
       </div>
       <div>
@@ -107,14 +96,14 @@ export default function DesignPage() {
         <p className={styles.duogamiPBlue}>צעד בלמידה והתפתחות</p>
       </div>
 
-      <div className={styles.duogamiExp}>
-        <p>יצאנו לחקר מתוך חשיבה על עולמות של תרבות הפנאי, חזרתם של מלאכות ישנות לתרבות, לקחנו השראה מתוך התרבות היפנית ומעיצוב מנימליסטי מתוך מחשבה על חידוש מסורת ישנה וליצור שפה עיצובית שהיא מודרנית. אנחנו תופסים מהמשתמשים אנשים חושבים ועצמאים שאוהבים את הנוסטלגיה ובאותה נשימה נלהבים מהחדשנות ונתנו את האופציה של שימוש עזר בAI.</p>
+      <div>
+        <p className={styles.duogamiExp}>יצאנו לחקר מתוך חשיבה על עולמות של תרבות הפנאי, חזרתם של מלאכות ישנות לתרבות, לקחנו השראה מתוך התרבות היפנית ומעיצוב מנימליסטי מתוך מחשבה על חידוש מסורת ישנה וליצור שפה עיצובית שהיא מודרנית. אנחנו תופסים מהמשתמשים אנשים חושבים ועצמאים שאוהבים את הנוסטלגיה ובאותה נשימה נלהבים מהחדשנות ונתנו את האופציה של שימוש עזר בAI.</p>
       </div>
       <div>
         <h3 className={styles.duogamiHeader}>רכיבים</h3>
         <h6 className={styles.duogamiRef}>עיצוב מינימליסטי</h6>
         <p className={styles.duogamiRefP}>הכחול בא להעביר תחושת חדשנות, מתוך המלאכה אנחנו יוצרים משהו טרנדי.</p>
-        <img className={`${styles.duogamiImg} ${styles.circleImg}`} src="/design/circle.png" alt="cirle create" />
+        <img className={`${styles.duogamiImg} ${styles.circleImg}`} src="/design/circle.png" alt="circle create"/>
       </div>
       <div>
         <p className={styles.duogamiConclusion}>המרחב של שקט והתפתחות בתוך סט אפ שנותן תחושת שייכות וחדשנות, קווים פשוטים ונקיים.</p>
