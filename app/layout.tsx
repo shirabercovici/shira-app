@@ -58,7 +58,7 @@ const editorSans = localFont({
 export const metadata: Metadata = {
   title: "Shira's App",
   description:
-    "A starter kit for wiritng code in the Digital Product Jam course.",
+    "A web app that was created in Ex2 in the Digital Product Jam course.",
   icons: {
     icon: "/icons/app-logo.png", // Main browser favicon
     apple: "/icons/icon-180.png", // Apple touch icon
