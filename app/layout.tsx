@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   description:
     "A starter kit for wiritng code in the Digital Product Jam course.",
   icons: {
-    icon: "/icons/shira website icon.png", // Main browser favicon
+    icon: "/icons/Shira-website-icon.png", // Main browser favicon
     apple: "/icons/icon-180.png", // Apple touch icon
   },
   manifest: "/manifest.json",
