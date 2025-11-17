@@ -1,3 +1,5 @@
+Link to the figma design: https://www.figma.com/design/tyfgCQch1KvLvA2MOh07Fj/%D7%90%D7%91%D7%99%D7%94-%D7%93%D7%A8%D7%95%D7%96%D7%99%D7%9F?node-id=0-1&m=dev
+
 # Starter Kit
 
 This is a Starter Kit for the Digital Product Jam course. It provides a
