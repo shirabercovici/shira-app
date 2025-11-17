@@ -9,7 +9,6 @@
 }
 
 .duogamiContent {
-  padding: 0 2rem 0; /* Increased top padding to 32px */
   color: #314FF8;
   text-align: right; 
   font-family: var(--font-masada), sans-serif;
@@ -19,12 +18,12 @@
   line-height: 120%;
   min-height: 6.25rem; /* 100px - Use min-height to allow growing while preserving alignment */
   width: 22.625rem; /* 362px */
+  max-width: 100%;       /* Prevents overflow on small screens */
+  align-self: center;    /* Forces centering if parent is Flexbox */
+  margin-left: auto;     /* Ensures horizontal centering */
+  margin-right: auto;
   box-sizing: border-box; /* Ensure padding is included in the width calculation */
-  margin: 0 auto 0; /* 12px top margin, centered horizontally, 0 bottom margin */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch; /* Stretch items to full width for consistent text alignment */
+  margin: 0 auto; /* This centers the block horizontally */
 }
 
 /* This new rule ensures all children of duogamiContent get the blue color */
@@ -53,9 +52,11 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.0375rem; /* 0.6px */
-  margin-right: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 0;
   margin-bottom: 0.3125rem; /* 5px */
+  width: 17.4375rem; /* 279px */
 }
 
 .duogamiP {
@@ -67,9 +68,10 @@
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.03rem; /* 0.48px */
-  margin-right: 1.5rem;
-  margin-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 0;
+  width: 17.4375rem; /* 279px */
 }
 
 .duogamiTeam {
@@ -83,8 +85,8 @@
   letter-spacing: 0.0375rem; /* 0.6px */
   height: 1.0625rem; /* 17px */
   align-self: stretch;
-  margin-right: 1.5rem;
-  margin-left: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 0.4rem; /* 7px */
   margin-top: 0;
 }
@@ -97,7 +99,12 @@
   font-weight: 700;
   line-height: 130%; /* 31.2px */
   letter-spacing: 0.18rem; /* 2.88px */
-  margin: 2.5rem auto 0; /* 12px top margin, centered horizontally, 0 bottom margin */
+  margin: 2.5rem auto 0; /* 2.5rem top, centered horizontally, 0 bottom */
+  width: 22.625rem; /* 362px */
+  max-width: 100%;       /* Safety for mobile */
+  align-self: center;    /* Forces centering if parent is Flexbox */
+  margin-left: auto;     /* Ensures horizontal centering */
+  margin-right: auto;    /* Ensures horizontal centering */
 }
 
 .duogamiImg {
@@ -117,7 +124,8 @@
   margin-top: 2.125rem; /* 34px */
   margin-bottom: 0;
   width: 17.4375rem; /* 279px */
-  margin-right: 1.5rem; /* Center the block */
+  margin-right: auto; /* Center the block */
+  margin-left: auto;
 }
 
 .duogamiRefP {
@@ -132,7 +140,8 @@
   margin-top: 0.4375rem;
   margin-bottom: 0.625rem; /* 10px */
   width: 17.4375rem; /* 279px */
-  margin-right: 1.5rem; /* Center the block */
+  margin-right: auto; /* Center the block */
+  margin-left: auto;
   flex-shrink: 0;
   align-self: stretch;
 }
@@ -141,6 +150,8 @@
   width: 17.4375rem; /* 279px */
   margin-left: auto;
   margin-right: auto;
+  margin-left: auto;
+
 }
 
 .duogamiRefCon {
@@ -187,6 +198,8 @@ margin-top: 7.1875rem; /* 115px */
 margin-bottom: 7.1875rem; /* 115px */
 margin-right: auto;
 margin-left: auto;
+width: 17.4375rem; /* 279px */
+
 }
 
 .duogamiRefExp {
@@ -201,10 +214,10 @@ margin-left: auto;
   margin-top: 0.4375rem;
   margin-bottom: 0.625rem; /* 10px */
   width: 17.4375rem; /* 279px */
-  margin-right: 1.5rem; /* Center the block */
+  margin-right: auto; /* Center the block */
+  margin-left: auto;
   flex-shrink: 0;
   align-self: stretch;
-  max-width: 15rem;
 }
 
 .duogamiConclusion {
@@ -215,8 +228,10 @@ margin-left: auto;
   font-style: normal;
   font-weight: 400;
   line-height: 1.2; /* 150% */
-  margin-right: auto; /* 50px */
-  margin-left: auto; /* 50px */
+  margin-right: auto;
+  margin-left: auto;
+  width: 17.4375rem; /* 279px */
+
 }
 
 .circleImg {

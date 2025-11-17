@@ -11,19 +11,20 @@ export default function DesignPage() {
             האוריגמי, וגם שער כניסה עבור אנשים חדשים.
           </p>
       </div>
+        <div>
+          <h3 className={styles.duogamiHeader}>קטגוריות</h3>
+          <h6 className={styles.duogamiCategory}>בעלי חיים</h6>
+          <p className={styles.duogamiP}>ציפורים, דגים, חרקים, יונקים, זוחלים</p>
+          <h6 className={styles.duogamiCategory}>צמחים בטבע</h6>
+          <p className={styles.duogamiP}>פרחים, עלים, עצים, פירות</p>
+          <h6 className={styles.duogamiCategory}>חפצים ופריטים יומיומיים</h6>
+          <p className={styles.duogamiP}>קופסאות, כוכבים, סירות, בגדים, קישוטים</p>
+          <h6 className={styles.duogamiCategory}>אנשים ודמויות</h6>
+          <p className={styles.duogamiP}>דמויות אדם, בובות, פרצופים מעוצבים</p>
+          <h6 className={styles.duogamiCategory}>פנטזיה ויצורים מיתולוגיים</h6>
+          <p className={styles.duogamiP}>דרקונים, חד־קרן, עוף החול, מפלצות</p>
+      </div>
       <div>
-        <h3 className={styles.duogamiHeader}>קטגוריות</h3>
-        <h6 className={styles.duogamiCategory}>בעלי חיים</h6>
-        <p className={styles.duogamiP}>ציפורים, דגים, חרקים, יונקים, זוחלים</p>
-        <h6 className={styles.duogamiCategory}>צמחים בטבע</h6>
-        <p className={styles.duogamiP}>פרחים, עלים, עצים, פירות</p>
-        <h6 className={styles.duogamiCategory}>חפצים ופריטים יומיומיים</h6>
-        <p className={styles.duogamiP}>קופסאות, כוכבים, סירות, בגדים, קישוטים</p>
-        <h6 className={styles.duogamiCategory}>אנשים ודמויות</h6>
-        <p className={styles.duogamiP}>דמויות אדם, בובות, פרצופים מעוצבים</p>
-        <h6 className={styles.duogamiCategory}>פנטזיה ויצורים מיתולוגיים</h6>
-        <p className={styles.duogamiP}>דרקונים, חד־קרן, עוף החול, מפלצות</p>
-
         <h3 className={styles.duogamiHeader}>צוות</h3>
         {/* Team Member 1 */}
         <div className={styles.teamMemberRow}>
@@ -101,8 +102,10 @@ export default function DesignPage() {
       </div>
       <div>
         <h3 className={styles.duogamiHeader}>רכיבים</h3>
-        <h6 className={styles.duogamiRef}>עיצוב מינימליסטי</h6>
-        <p className={styles.duogamiRefExp}>הכחול בא להעביר תחושת חדשנות, מתוך המלאכה אנחנו יוצרים משהו טרנדי.</p>
+        <div className={styles.textBlock}>
+          <h6 className={styles.duogamiRef}>עיצוב מינימליסטי</h6>
+          <p className={styles.duogamiRefExp}>הכחול בא להעביר תחושת חדשנות, מתוך המלאכה אנחנו יוצרים משהו טרנדי.</p>
+        </div>
         <img className={`${styles.duogamiImg} ${styles.circleImg}`} src="/design/circle.png" alt="circle create"/>
       </div>
       <div>
