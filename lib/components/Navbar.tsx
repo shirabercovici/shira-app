@@ -32,7 +32,7 @@ export default function NavBar() {
       <div className={styles.navContainer}>
         <Link href="/" className={styles.logoLink}>
           <Image
-            src="/icons/shira website icon.png"
+            src="/icons/shira_website_icon.png"
             alt="Shira's App icon"
             width={40}
             height={40}
