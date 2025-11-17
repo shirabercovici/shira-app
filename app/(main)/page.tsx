@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.header}>
-        <h2>Welcome to Shira&apos;s App!</h2>
-        <p>Here are some projects you can check out:</p>
+        <h2>Welcome to my App!</h2>
+        <h3>Here are some projects you can check out:</h3>
       </div>
 
       <div className={styles.grid}>
