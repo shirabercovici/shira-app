@@ -1,20 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
-import { David_Libre, Roboto } from "next/font/google";
 
-// Configure the fonts
-const davidLibre = David_Libre({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-david-libre", // This creates a CSS variable
-});
-
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-roboto", // This creates another CSS variable
-});
 
 export const metadata: Metadata = {
   title: "Shira's App",
@@ -29,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${davidLibre.variable} ${roboto.variable}`}>
+    <html lang="en">
       <body>
         {children}
         <Script src="https://accounts.google.com/gsi/client" async />
