@@ -2,6 +2,18 @@
   direction: rtl;
 }
 
+.logo {
+color: #314FF8;
+text-align: center;
+font-family: var(--font-masada), sans-serif;
+font-size: 3.5rem;
+font-style: normal;
+font-weight: 550;
+line-height: normal;
+text-decoration: none;
+margin-bottom: 2rem;
+margin-top: 0;
+}
 
 .DuoGamiLink {
   text-decoration: none;

@@ -12,8 +12,8 @@ export default function DesignLayout({ children }: { children: ReactNode }) {
   return (
     // By combining the classNames, we give Next.js the strongest possible instruction
     // to apply these fonts for this layout and its children during navigation.
-    <div>
-      <DesignNavbar />
+    <div className={styles.pageContainer}>
+      {/* <DesignNavbar /> */}
       <main className={styles.mainContent}>
         {children}
       </main>

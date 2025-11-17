@@ -4,6 +4,7 @@ import Link from "next/link";
 export default function DesignPage() {
   return (
     <div className={styles.rtlPage}>
+      <h1 className={styles.logo}>DuoGami</h1>
       <div>
           <p className={styles.duogamiContent}>
             מוצר שבא ללמד אנשים לעשות אוריגאמי ברמות שונות ומותאמות למשתמש
