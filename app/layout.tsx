@@ -22,17 +22,32 @@ export const masada = localFont({
   variable: '--font-masada',
 });
 
-// Configure EditorSans (Defining Normal and Medium)
+// Configure EditorSans with all available weights
 export const editorSans = localFont({
   src: [
     {
+      path: './fonts/EditorSans-Light.otf',
+      weight: '300', // Light is usually 300
+      style: 'normal',
+    },
+    {
+      path: './fonts/EditorSans-Book.otf',
+      weight: '350', // "Book" is often between Light and Normal. 
+      style: 'normal', // You can also map this to '400' if you prefer this over "Normal"
+    },
+    {
       path: './fonts/EditorSans-Normal.otf',
-      weight: '400',
+      weight: '400', // Standard "Regular" weight
       style: 'normal',
     },
     {
       path: './fonts/EditorSans-Medium.otf',
       weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './fonts/EditorSans-Semibold.otf',
+      weight: '600',
       style: 'normal',
     },
   ],

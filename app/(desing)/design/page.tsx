@@ -102,7 +102,7 @@ export default function DesignPage() {
       <div>
         <h3 className={styles.duogamiHeader}>רכיבים</h3>
         <h6 className={styles.duogamiRef}>עיצוב מינימליסטי</h6>
-        <p className={styles.duogamiRefP}>הכחול בא להעביר תחושת חדשנות, מתוך המלאכה אנחנו יוצרים משהו טרנדי.</p>
+        <p className={styles.duogamiRefExp}>הכחול בא להעביר תחושת חדשנות, מתוך המלאכה אנחנו יוצרים משהו טרנדי.</p>
         <img className={`${styles.duogamiImg} ${styles.circleImg}`} src="/design/circle.png" alt="circle create"/>
       </div>
       <div>
