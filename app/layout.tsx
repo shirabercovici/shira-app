@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
 import "./styles/global.css";
-
 import localFont from "next/font/local";
 
 
@@ -71,7 +70,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${masada.variable} ${editorSans.variable}`}>
       {/* By default, the entire app will use editorSans, applied via CSS. */}
-      <body>
+      <body className={editorSans.className}>
         {children}
         <Script src="https://accounts.google.com/gsi/client" async />
       </body>
