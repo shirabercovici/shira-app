@@ -21,9 +21,10 @@
 }
 
 .logoIcon {
-  height: 40px; /* Give the logo icon a size */
-  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; 
+  flex-shrink: 0; 
 }
+
 .navContainer {
   display: flex;
   justify-content: space-between;
