@@ -1,4 +1,5 @@
 .mainContent {
   background-color: #FFFFFF;
-  min-height: calc(100vh - 90px); /* Fill screen height minus navbar */
+  min-height: 100%; /* Fill the entire screen height */
+  min-width: 100%; /* Fill the entire screen width */
 }
